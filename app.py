@@ -36,21 +36,20 @@ class NoteResource:
         try:
             result = json.loads(raw_json, encoding='utf-8')
             sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert({'title':result['title'],'body':result['body']}).run(db_connection)
-            resp.body = 'Successfully inserted %s'%sid
+            #resp.body = 'Successfully inserted %s'%sid
+            resp.body = '%s'%json.dumps(sid)
         except ValueError:
             raise falcon.HTTPError(falcon.HTTP_400,
                 'Invalid JSON',
                 'Could not decode the request body. The '
                 'JSON was incorrect.')
 
-"""
         def on_delete(self, req, resp):
             """Handles GET requests"""
             # Return all notes
             note_cursor = r.db(PROJECT_DB).table(PROJECT_TABLE).run(db_connection)
             notes = [i for i in note_cursor]
             resp.body = json.dumps({'notes':notes})
- """
 
 api = falcon.API()
 api.add_route('/notes', NoteResource())

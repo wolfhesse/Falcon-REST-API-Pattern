@@ -1,3 +1,18 @@
+# precond ubuntu
+
+sudo apt install libffi-dev
+sudo apt install libncurses5-dev
+
+# utility ubuntu
+
+sudo apt install jq
+
+
+# interactive 
+
+
+curl -H post 'http://s1.wolfslab.local.wolfspool.at:8000/notes' | jq '.' | less
+
 # Falcon-REST-API-Pattern
 Massively scalable RESTFul API design with Falcon and PyPy
 

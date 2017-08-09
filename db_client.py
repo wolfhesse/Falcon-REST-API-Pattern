@@ -3,7 +3,7 @@ import rethinkdb as r
 from rethinkdb.errors import RqlRuntimeError, RqlDriverError
 
 
-RDB_HOST = os.environ.get('RDB_HOST') or '10.0.0.1'
+RDB_HOST = os.environ.get('RDB_HOST') or '10.0.0.100'
 RDB_PORT = os.environ.get('RDB_PORT') or 28015
 
 PROJECT_DB = 'todo'

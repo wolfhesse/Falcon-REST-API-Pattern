@@ -26,6 +26,7 @@ class NoteResource:
     def on_post(self, req, resp):
         """Handles POST requests"""
         try:
+            print '1'
             raw_json = req.stream.read()
             print raw_json
         except Exception as ex:
@@ -35,9 +36,12 @@ class NoteResource:
  
         try:
             result = json.loads(raw_json, encoding='utf-8')
-            sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert({'title':result['title'],'body':result['body']}).run(db_connection)
+            #sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert({'title':'webhook', 'data':result}).run(db_connection)
+            sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert(result).run(db_connection)
+            #sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert({'title':result['title'],'body':result['body']}).run(db_connection)
             #resp.body = 'Successfully inserted %s'%sid
             resp.body = '%s'%json.dumps(sid)
+            print '2'
         except ValueError:
             raise falcon.HTTPError(falcon.HTTP_400,
                 'Invalid JSON',

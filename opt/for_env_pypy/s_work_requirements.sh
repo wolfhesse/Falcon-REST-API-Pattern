@@ -1,7 +1,10 @@
 #!/usr/bin/env bash
 cp requirements.txt frozen.requirements.txt
 
-pip install -r frozen.requirements.txt --upgrade
+### pip install -r frozen.requirements.txt --upgrade
+cat frozen.requirements.txt | awk -F= '{print $1}' | xargs -I {} pip install {} --upgrade
+
+
 pip freeze >requirements.txt
 
 echo comparing requirements files...

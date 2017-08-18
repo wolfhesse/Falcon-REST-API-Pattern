@@ -4,11 +4,12 @@ __author__ = "Naren_Aryan"
 __written_date__ = "13-09-2015:Saturday"
 __title__ = "Falcon and PyPy for building massively scalable RESTFul API"
 
-import falcon
 import json
 
+import falcon
 
 from db_client import *
+
 
 class NoteResource:
     
@@ -36,8 +37,11 @@ class NoteResource:
  
         try:
             result = json.loads(raw_json, encoding='utf-8')
+            data = {'pstate': 'initial', 'type': 'falcon-order-webhook-rcv', 'request': 'post', 'system': 'rcs2',
+                    'order': result}
+
             #sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert({'title':'webhook', 'data':result}).run(db_connection)
-            sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert(result).run(db_connection)
+            sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert(data).run(db_connection)
             #sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert({'title':result['title'],'body':result['body']}).run(db_connection)
             #resp.body = 'Successfully inserted %s'%sid
             resp.body = '%s'%json.dumps(sid)

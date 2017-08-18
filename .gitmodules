@@ -1,0 +1,3 @@
+[submodule "python-options-process"]
+	path = python-options-process
+	url = git@github.com:wolfhesse/python-options-process.git

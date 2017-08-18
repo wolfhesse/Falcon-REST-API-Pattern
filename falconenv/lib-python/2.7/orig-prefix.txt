@@ -1,1 +1,0 @@
-/usr/pypy-2.6.1-linux64

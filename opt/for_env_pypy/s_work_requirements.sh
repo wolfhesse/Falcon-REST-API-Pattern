@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+cp requirements.txt frozen.requirements.txt
+
 pip install -r frozen.requirements.txt --upgrade
 pip freeze >requirements.txt
 

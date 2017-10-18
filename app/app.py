@@ -21,7 +21,7 @@ class NoteResource:
         else:
             note_cursor = r.db(PROJECT_DB).table(PROJECT_TABLE).run(db_connection)
             result = {'notes': [i for i in note_cursor]}
-        print result
+        print(result)
         resp.body = json.dumps(result)
 
     def on_post(self, req, resp, system):
@@ -32,7 +32,7 @@ class NoteResource:
 
             try:
                 raw_json = req.stream.read()
-                print raw_json
+                print(raw_json)
             except Exception as ex:
                 raise falcon.HTTPError(falcon.HTTP_400,
                                        'Error',
@@ -40,7 +40,7 @@ class NoteResource:
 
             if raw_json.startswith('webhook_id'):
                 resp.body = 'step0'
-                print 'webhook'
+                print('webhook')
                 finished = True
 
         if not finished:
@@ -68,7 +68,7 @@ class NoteResource:
                 # sid = r.db(PROJECT_DB).table(PROJECT_TABLE).insert({'title':result['title'],'body':result['body']}).run(db_connection)
                 # resp.body = 'Successfully inserted %s'%sid
                 resp.body = '%s' % json.dumps(sid)
-                print 'step1'
+                print('step1')
             except ValueError:
                 raise falcon.HTTPError(falcon.HTTP_400,
                                        'Invalid JSON',
@@ -87,7 +87,7 @@ class NoteResource:
                                   routing_key='hello',
                                   body="%s" % json.dumps(data))
             channel.close()
-            print 'step3'
+            print('step3')
 
         resp.body = '{"webhook-note":"OK"}'
 

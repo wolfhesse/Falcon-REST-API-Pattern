@@ -12,7 +12,8 @@ RUN apk upgrade --no-cache
 
 
 COPY ./requirements.txt /tmp
-RUN pip install --proxy=10.0.0.1:3128 -r /tmp/requirements.txt
+#RUN pip install --proxy=10.0.0.1:3128 -r /tmp/requirements.txt
+RUN pip install -r /tmp/requirements.txt
 
 EXPOSE 8002
 COPY ./app /app

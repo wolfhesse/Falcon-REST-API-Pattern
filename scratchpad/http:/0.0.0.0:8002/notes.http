@@ -1,0 +1,252 @@
+GET http://0.0.0.0:8002/notes
+
+###
+
+
+
+POST http://10.0.0.1:8002/notes/pystorm/
+Content-Type: application/json; charset=utf-8
+X-WC-WEBHOOK-RESOURCE: pystorm
+HOST: webhooks.base.wolfspool.at
+
+
+{
+    "date_completed_gmt": null,
+    "date_modified_gmt": "2017-12-06T10:23:57",
+    "payment_method": "cod",
+    "number": "5727",
+    "currency": "EUR",
+    "cart_hash": "484b7905e7f18c4a63acd20181810e99",
+    "total": "70.00",
+    "shipping_tax": "0.00",
+    "id": 5727,
+    "customer_ip_address": "127.0.0.1",
+    "discount_tax": "0.00",
+    "coupon_lines": [],
+    "billing": {
+      "city": "Wien",
+      "first_name": "Roger",
+      "last_name": "A",
+      "country": "AT",
+      "company": "ASE",
+      "phone": "0676123123",
+      "state": "",
+      "address_1": "Vorgartenstrasse 195",
+      "address_2": "",
+      "email": "rogera+woocommerce@wolfspool.at",
+      "postcode": "1020"
+    },
+    "customer_user_agent": "mozilla/5.0 (x11; ubuntu; linux i686; rv:57.0) gecko/20100101 firefox/57.0",
+    "date_paid_gmt": null,
+    "parent_id": 0,
+    "created_via": "checkout",
+    "version": "3.2.5",
+    "fee_lines": [],
+    "customer_id": 1,
+    "transaction_id": "",
+    "status": "processing",
+    "total_tax": "0.00",
+    "customer_note": "",
+    "prices_include_tax": false,
+    "tax_lines": [],
+    "shipping_total": "0.00",
+    "payment_method_title": "Bei Uebergabe",
+    "meta_data": [
+      {
+        "value": "Dennis",
+        "id": 50925,
+        "key": "_ase_gp"
+      },
+      {
+        "value": "yes",
+        "id": 50926,
+        "key": "_download_permissions_granted"
+      },
+      {
+        "value": "yes",
+        "id": 50929,
+        "key": "_order_stock_reduced"
+      }
+    ],
+    "discount_total": "0.00",
+    "order_key": "wc_order_5a27c53cbceb3",
+    "line_items": [
+      {
+        "sku": "",
+        "total_tax": "0.00",
+        "product_id": 284,
+        "price": 35,
+        "tax_class": "",
+        "variation_id": 0,
+        "taxes": [],
+        "name": "ANTIOXIDANTIEN",
+        "meta_data": [],
+        "subtotal_tax": "0.00",
+        "total": "70.00",
+        "subtotal": "70.00",
+        "id": 101,
+        "quantity": 2
+      }
+    ],
+    "shipping_lines": [
+      {
+        "total_tax": "0.00",
+        "method_id": "flat_rate:1",
+        "method_title": "Versandkostenpauschale",
+        "taxes": [],
+        "meta_data": [
+          {
+            "value": "ANTIOXIDANTIEN &times; 2",
+            "id": 761,
+            "key": "Positionen"
+          }
+        ],
+        "total": "0.00",
+        "id": 102
+      }
+    ],
+    "date_completed": null,
+    "refunds": [],
+    "date_modified": "2017-12-06T11:23:57",
+    "date_created_gmt": "2017-12-06T10:23:56",
+    "shipping": {
+      "city": "Wien",
+      "first_name": "Roger",
+      "last_name": "A",
+      "country": "AT",
+      "company": "ASE",
+      "state": "",
+      "address_1": "Vorgartenstrasse 195",
+      "address_2": "",
+      "postcode": "1020"
+    },
+    "date_paid": null,
+    "date_created": "2017-12-06T11:23:56",
+    "cart_tax": "0.00"
+  }
+
+
+###
+
+
+POST http://webhooks.base.wolfspool.at/notes/pystorm/
+Content-Type: application/json; charset=utf-8
+X-WC-WEBHOOK-RESOURCE: phpstorm2
+HOST: webhooks.base.wolfspool.at
+
+
+{
+    "date_completed_gmt": null,
+    "date_modified_gmt": "2017-12-06T10:23:57",
+    "payment_method": "cod",
+    "number": "5727",
+    "currency": "EUR",
+    "cart_hash": "484b7905e7f18c4a63acd20181810e99",
+    "total": "70.00",
+    "shipping_tax": "0.00",
+    "id": 5727,
+    "customer_ip_address": "127.0.0.1",
+    "discount_tax": "0.00",
+    "coupon_lines": [],
+    "billing": {
+      "city": "Wien",
+      "first_name": "Roger",
+      "last_name": "A",
+      "country": "AT",
+      "company": "ASE",
+      "phone": "0676123123",
+      "state": "",
+      "address_1": "Vorgartenstrasse 195",
+      "address_2": "",
+      "email": "rogera+woocommerce@wolfspool.at",
+      "postcode": "1020"
+    },
+    "customer_user_agent": "mozilla/5.0 (x11; ubuntu; linux i686; rv:57.0) gecko/20100101 firefox/57.0",
+    "date_paid_gmt": null,
+    "parent_id": 0,
+    "created_via": "checkout",
+    "version": "3.2.5",
+    "fee_lines": [],
+    "customer_id": 1,
+    "transaction_id": "",
+    "status": "processing",
+    "total_tax": "0.00",
+    "customer_note": "",
+    "prices_include_tax": false,
+    "tax_lines": [],
+    "shipping_total": "0.00",
+    "payment_method_title": "Bei Uebergabe",
+    "meta_data": [
+      {
+        "value": "Dennis",
+        "id": 50925,
+        "key": "_ase_gp"
+      },
+      {
+        "value": "yes",
+        "id": 50926,
+        "key": "_download_permissions_granted"
+      },
+      {
+        "value": "yes",
+        "id": 50929,
+        "key": "_order_stock_reduced"
+      }
+    ],
+    "discount_total": "0.00",
+    "order_key": "wc_order_5a27c53cbceb3",
+    "line_items": [
+      {
+        "sku": "",
+        "total_tax": "0.00",
+        "product_id": 284,
+        "price": 35,
+        "tax_class": "",
+        "variation_id": 0,
+        "taxes": [],
+        "name": "ANTIOXIDANTIEN",
+        "meta_data": [],
+        "subtotal_tax": "0.00",
+        "total": "70.00",
+        "subtotal": "70.00",
+        "id": 101,
+        "quantity": 2
+      }
+    ],
+    "shipping_lines": [
+      {
+        "total_tax": "0.00",
+        "method_id": "flat_rate:1",
+        "method_title": "Versandkostenpauschale",
+        "taxes": [],
+        "meta_data": [
+          {
+            "value": "ANTIOXIDANTIEN &times; 2",
+            "id": 761,
+            "key": "Positionen"
+          }
+        ],
+        "total": "0.00",
+        "id": 102
+      }
+    ],
+    "date_completed": null,
+    "refunds": [],
+    "date_modified": "2017-12-06T11:23:57",
+    "date_created_gmt": "2017-12-06T10:23:56",
+    "shipping": {
+      "city": "Wien",
+      "first_name": "Roger",
+      "last_name": "A",
+      "country": "AT",
+      "company": "ASE",
+      "state": "",
+      "address_1": "Vorgartenstrasse 195",
+      "address_2": "",
+      "postcode": "1020"
+    },
+    "date_paid": null,
+    "date_created": "2017-12-06T11:23:56",
+    "cart_tax": "0.00"
+  }
+

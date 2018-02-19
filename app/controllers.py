@@ -9,7 +9,7 @@ from db_client import setupDbAndTable
 
 
 class NoteResourceController:
-    def __init__(self, connection, db, table, channel):
+    def __init__(self, connection, db, table, channel=None):
         self.connection = connection
         self.db = db
         self.table = table
@@ -101,17 +101,26 @@ class NoteResourceController:
 
             print('step3')
             try:
-                credentials = pika.PlainCredentials('test', 'test')
+                print("setup mq config")
+                credentials = pika.PlainCredentials('rogera', '1boris')
+                print("setup mq connection")
                 connection = pika.BlockingConnection(
                     pika.ConnectionParameters('s0.wolfslab.wolfspool.at', credentials=credentials))
+                print("setup mq channel")
                 channel = connection.channel()
+                print("setup mq queue: hello")
                 channel.queue_declare(queue='hello', durable=True)
 
+                print("mq publish")
                 channel.basic_publish(exchange='',
                                       routing_key='hello',
                                       body="%s" % json.dumps(data))
+                print("mq published")
                 channel.close()
+                print("closed mq channel")
                 connection.close()
+                print("closed mq connection")
+                print("step3 finished at {0}, {1}".format(d, t))
             except:
                 print('step3 exception')
 

@@ -6,7 +6,7 @@ GET http://0.0.0.0:8002/notes
 
 POST http://10.0.0.1:8002/notes/pystorm/
 Content-Type: application/json; charset=utf-8
-X-WC-WEBHOOK-RESOURCE: pystorm
+X-WC-WEBHOOK-RESOURCE: wehbhooks_8002
 HOST: webhooks.base.wolfspool.at
 
 
@@ -131,7 +131,7 @@ HOST: webhooks.base.wolfspool.at
 
 POST http://webhooks.base.wolfspool.at/notes/pystorm/
 Content-Type: application/json; charset=utf-8
-X-WC-WEBHOOK-RESOURCE: phpstorm2
+X-WC-WEBHOOK-RESOURCE: webhooks_pystorm
 HOST: webhooks.base.wolfspool.at
 
 
@@ -249,4 +249,6 @@ HOST: webhooks.base.wolfspool.at
     "date_created": "2017-12-06T11:23:56",
     "cart_tax": "0.00"
   }
+
+###
 

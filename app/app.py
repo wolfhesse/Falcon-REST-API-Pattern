@@ -27,7 +27,7 @@ print("rethinkdb connection established")
 print("setup mq config")
 credentials = pika.PlainCredentials('rogera', '1boris')
 connection = pika.BlockingConnection(
-    pika.ConnectionParameters('s0.wolfslab.wolfspool.at', credentials=credentials))
+    pika.ConnectionParameters('10.0.0.100', credentials=credentials))
 channel = connection.channel()
 channel.queue_declare(queue='hello', durable=True)
 channel.close()

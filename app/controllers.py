@@ -105,7 +105,8 @@ class NoteResourceController:
                 credentials = pika.PlainCredentials('rogera', '1boris')
                 print("setup mq connection")
                 connection = pika.BlockingConnection(
-                    pika.ConnectionParameters('s0.wolfslab.wolfspool.at', credentials=credentials))
+                    # pika.ConnectionParameters('s0.wolfslab.wolfspool.at', credentials=credentials))
+                    pika.ConnectionParameters('10.0.0.100', credentials=credentials))
                 print("setup mq channel")
                 channel = connection.channel()
                 print("setup mq queue: hello")
